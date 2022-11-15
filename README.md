@@ -1,6 +1,6 @@
 Hello!
 
-My name is Hamza Gassi I am a python/reactjs developer out of Montreal,Canada
+My name is Hamza Gassi I am a python developer out of Montreal,Canada
 and this is a portfolio of python programs I developed myself. 
 
 These projects were developed by myself solely with no outside assistance besides google and the python.org library.
