@@ -1,9 +1,9 @@
 #importing random words module in order to generate a random word for player to guess
-from random_word import RandomWords
+from random_words import RandomWords
 
 #generate word and split letters into list in order to compare player guesses with the word and gradually show correctly guessed letters.
 generateRandomWord = RandomWords()
-hangmanValue = generateRandomWord.get_random_word()
+hangmanValue = generateRandomWord.random_word()
 hangmanWordListed = list(hangmanValue)
 wordLength = len(hangmanWordListed)
 hangmanGuessList = []
@@ -51,16 +51,19 @@ while isGameActive == True or hangmanGuessList != hangmanWordListed:
     else:
         guessCount += 1
         print("Wrong guess! You have", guessesLeft, "tries left.")
+        print(hangmanGuessList)
 
     #managing the message displayed to the player in case of a player win and offering choice to start a new game.
     if hangmanWordListed == hangmanGuessList:
         print("Congratulations! You beat the impossible hangman game!")
+        print("The word was ", hangmanWordListed)
         isGameActive = False
         startNewGame = input("Start a new game? Y/N").lower()
 
     # managing the message displayed to the player in case of a player loss and offering choice to start a new game.
     elif guessesLeft == 0:
         print("Game Over. Better luck next time!")
+        print("The word to guess was ", hangmanWordListed)
         isGameActive = False
         startNewGame = input("Start a new game? Y/N").lower()
 
@@ -72,7 +75,7 @@ while isGameActive == True or hangmanGuessList != hangmanWordListed:
 
         else:
             generateRandomWord = RandomWords()
-            hangmanValue = generateRandomWord.get_random_word()
+            #hangmanValue = generateRandomWord.get_random_word()
             hangmanWordListed = list(hangmanValue)
             wordLength = len(hangmanWordListed)
             hangmanGuessList = []
